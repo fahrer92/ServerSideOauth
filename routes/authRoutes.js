@@ -10,4 +10,14 @@ module.exports = (app) =>{
 
   //When a user visits this route passport will have the code
   app.get('/auth/google/callback', passport.authenticate('google'));
+
+  //logout -> kill the cookie
+  app.get('/api/logout', (req,res) =>{
+    req.logout();
+    res.send(req.user);
+  });
+
+  app.get('/api/current_user', (req,res)=>{
+    res.send(req.user);
+  })
 }
