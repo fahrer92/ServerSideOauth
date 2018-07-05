@@ -12,9 +12,14 @@ class Header extends Component{
         return;
       case false:
         return (
-        <li>
-          <a href = "/auth/google"> Login With Google </a>
-        </li>
+        <div>
+          <li>
+            <a href = "/auth/google"> Login With Google </a>
+          </li>
+          <li>
+            <a href = "/auth/facebook"> Login With Facebook </a>
+          </li>
+        </div>
         )
       default:
       return <li>
