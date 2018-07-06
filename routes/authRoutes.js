@@ -26,7 +26,7 @@ module.exports = (app) =>{
     res.send(req.user);
   })
 
-  /////Faceboook oauth20
+  //Faceboook oauth20
 
   app.get('/auth/facebook',
   passport.authenticate('facebook'));
