@@ -1,6 +1,14 @@
 import axios from 'axios';
 import {FETCH_USER} from './types';
 export const fetchUser = ()=> async (dispatch) =>{
-    const request = await axios.get('/api/current_user');
-    dispatch({type: FETCH_USER, payload: request.data});
+    const res = await axios.get('/api/current_user');
+    dispatch({type: FETCH_USER, payload: res.data});
   };
+
+
+  export const handleToken = (token) => async (dispatch) =>{
+    console.log(token);
+    const res = await axios.post('/api/stripe', token);
+    dispatch({type:FETCH_USER, payload:res.data})
+
+  }
